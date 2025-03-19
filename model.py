@@ -169,4 +169,3 @@ class TemporalTransformerHawkesGraphModel(nn.Module):
 
         return scores, estimate_dt, dur_last
 
-

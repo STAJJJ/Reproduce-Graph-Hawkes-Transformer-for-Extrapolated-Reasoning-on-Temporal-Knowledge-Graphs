@@ -5,7 +5,7 @@ import os
 from tqdm import tqdm
 
 
-data_path = os.path.join('data', 'ICEWS0515')
+data_path = os.path.join('data', 'ICEWS14')
 trainpath = os.path.join(data_path, 'train.txt')
 validpath = os.path.join(data_path, 'valid.txt')
 testpath = os.path.join(data_path, 'test.txt')
