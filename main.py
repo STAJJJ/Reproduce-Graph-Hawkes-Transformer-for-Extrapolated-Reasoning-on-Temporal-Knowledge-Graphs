@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 from utils import set_logger
 import pickle
 import math
+import pdb
 
 def parse_args(args=None):
     parser = argparse.ArgumentParser(
@@ -68,6 +69,7 @@ def test(model, testloader, skip_dict, device):
     TimeMAE = 0.
     with torch.no_grad():
         for sub, rel, obj, time, history_graphs, history_times, batch_node_ids in tqdm(testloader):
+            #pdb.set_trace()
             sub = sub.to(device, non_blocking=True)
             rel = rel.to(device, non_blocking=True)
             obj = obj.to(device, non_blocking=True)
@@ -211,7 +213,7 @@ def main(args):
         shuffle=True,
         batch_size=args.batch_size,
         collate_fn=lambda x: trainQuadDataset.collate_fn(x, baseDataset.num_e),
-        num_workers=args.num_works,
+        num_workers=0,
         pin_memory=True
     )
 
